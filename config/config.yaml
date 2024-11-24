@@ -1,0 +1,91 @@
+- server:
+    port: 3000
+    host: localhost
+    server_name: nokta1
+    404_error_page: /error/404.html
+    405_error_page: /error/405.html
+    502_error_page: /error/502.html
+    500_error_page: /error/500.html
+    client_max_body_size: 5888888888
+    root: /nfs/homes/afanti/Desktop/push_it/docks
+    locations:
+      - path: /docks
+        root: /nfs/homes/afanti/Desktop/push_it/docks
+        autoindex: on
+        allow_methods: POST,GET,DELETE
+        upload_pass_args: on
+        upload_pass: .
+      - path: /path-hamid
+        root: /nfs/homes/afanti/Desktop/push_it/docks
+        autoindex: on
+        allow_methods: POST,GET,DELETE
+      - path: /path
+        root: /nfs/homes/afanti/Desktop/push_it/docks
+        autoindex: on
+        upload_pass_args: on
+        upload_pass: upload_dir
+        index: index.html
+        allow_methods: POST,GET,DELETE
+- server:
+    port: 7780
+    host: localhost
+    server_name: nokta2
+    404_error_page: /error/404.html
+    403_error_page: /error/403.html
+    400_error_page: /error/400.html
+    402_error_page: /error/404.html
+    401_error_page: /error/401.html
+    412_error_page: /error/412.html
+    405_error_page: /error/405.html
+    502_error_page: /error/502.html
+    500_error_page: /error/500.html
+    client_max_body_size: 52331
+    root: /nfs/homes/afanti/Desktop/push_it/docks
+    locations:
+      - path: /docks
+        root: /nfs/homes/afanti/Desktop/push_it/docks
+        autoindex: off
+        allow_methods: GET
+        index: index.php
+      - path: /path
+        root: /nfs/homes/afanti/Desktop/push_it/docks
+        autoindex: on
+        allow_methods: POST,GET,DELETE
+        cgi: on
+        cgi-ext: .php /usr/bin/php-cgi,.py /usr/bin/python3
+      - path: /cgi-bin
+        root: /nfs/homes/afanti/Desktop/push_it/docks
+        autoindex: on
+        allow_methods: POST,GET,DELETE
+- server:
+    port: 7780
+    host: localhost
+    server_name: nokta3
+    404_error_page: /error/404.html
+    403_error_page: /error/403.html
+    400_error_page: /error/400.html
+    402_error_page: /error/404.html
+    401_error_page: /error/401.html
+    413_error_page: /error/413.html
+    501_error_page: /error/501.html
+    505_error_page: /error/505.html
+    405_error_page: /error/405.html
+    502_error_page: /error/502.html
+    500_error_page: /error/500.html
+    client_max_body_size: 9999999999999999
+    root: /nfs/homes/afanti/Desktop/push_it/docks
+    locations:
+      - path: /docks
+        root: /nfs/homes/afanti/Desktop/push_it/docks
+        autoindex: off
+        allow_methods: POST,GET,DELETE, GET
+      - path: /path
+        root: /nfs/homes/afanti/Desktop/push_it/docks
+        autoindex: on
+        allow_methods: POST,GET,DELETE
+        cgi: on
+        cgi-ext: .php /usr/bin/php-cgi,.py /usr/bin/python3
+      - path: /cgi-bin
+        root: /nfs/homes/afanti/Desktop/push_it/docks
+        autoindex: on
+        allow_methods: POST,GET,DELETE
